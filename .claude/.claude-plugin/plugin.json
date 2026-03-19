@@ -1,0 +1,10 @@
+{
+  "name": "product-marketing-skills",
+  "description": "Six packaged product marketing skills for shared PMM context, messaging and positioning, competitive intelligence, customer research, go-to-market planning, and pricing and packaging.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Local Workspace"
+  },
+  "repository": "https://github.com/GTM-Strategist/gtm-strategist-skills",
+  "license": "MIT"
+}
