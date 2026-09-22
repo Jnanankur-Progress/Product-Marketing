@@ -1,8 +1,13 @@
 # Product Marketing Skills
 
-Six packaged Claude skills for core product marketing work: context setup, messaging, competitive intelligence, customer research, go-to-market planning, and pricing.
+Six product marketing skills for Claude and GitHub Copilot: context setup,
+messaging, competitive intelligence, customer research, go-to-market planning,
+and pricing.
 
-These skills live in `.claude/skills` as packaged `.skill` files and share a common context file at `.agents/product-marketing-context.md`.
+Claude uses the packaged `.skill` archives in `.claude/skills`. GitHub Copilot
+uses the repository-native `SKILL.md` directories in `.github/skills`. Both
+formats contain the same skill instructions and share context through
+`.agents/product-marketing-context.md`.
 
 ## Included Skills
 
@@ -24,11 +29,16 @@ These skills live in `.claude/skills` as packaged `.skill` files and share a com
 
 ## Repository Layout
 
-- `.claude/skills`: packaged skill files used by Claude
+- `.claude/skills/*.skill`: packaged skills used by Claude
 - `.claude/.claude-plugin/plugin.json`: Claude plugin metadata
-- `.agents/product-marketing-context.md`: shared PMM context file
-- `CLAUDE.md`: repo-level operating instructions for Claude
-- `my-gtm-context.md`: reference template
+- `.github/skills/<skill-name>/SKILL.md`: repository-native skills discovered
+  by GitHub Copilot
+- `.github/copilot-instructions.md`: repository-level operating instructions
+  for GitHub Copilot
+- `skills/*.skill`: distribution copies of the packaged skills
+- `.agents/product-marketing-context.md`: shared PMM context created during use
+- `CLAUDE.md`: repository-level operating instructions for Claude
+- `my-gtm-context.md`: reference context template
 
 ## Using With Claude
 
@@ -44,7 +54,16 @@ Upload:
 - The packaged `.skill` files from `.claude/skills`
 - Optionally `.agents/product-marketing-context.md` if you want to preload context
 
-Do not look for unpacked `SKILL.md` folders in this repo. The shipped artifacts are the `.skill` packages themselves.
+### GitHub Copilot
+
+Open this repository in a Copilot coding session. Copilot reads
+`.github/copilot-instructions.md` for the shared workflow and discovers each
+skill from `.github/skills/<skill-name>/SKILL.md`.
+
+Start with the `product-marketing-context` skill when shared context is missing
+or stale. For specialized PMM work, ask Copilot to use the matching skill; it
+should read existing `.agents` documents first and save working strategy
+documents there unless you request another location.
 
 ## Recommended Workflow
 
@@ -57,5 +76,9 @@ Do not look for unpacked `SKILL.md` folders in this repo. The shipped artifacts 
 ## Notes
 
 - This repo ships 6 PMM skills.
+- Keep each `.github/skills/<skill-name>/SKILL.md` synchronized with the
+  corresponding packaged `<skill-name>/SKILL.md`.
 - Use `.agents/product-marketing-context.md` for shared context.
-- If you add more skills later, update `README.md`, `CLAUDE.md`, and `.claude/.claude-plugin/plugin.json` together.
+- If you add more skills later, update `README.md`, `CLAUDE.md`,
+  `.github/copilot-instructions.md`, and `.claude/.claude-plugin/plugin.json`
+  together.
