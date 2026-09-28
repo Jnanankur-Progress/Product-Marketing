@@ -1,6 +1,6 @@
 # Product Marketing Skills
 
-Six packaged Claude skills for core product marketing work: context setup, messaging, competitive intelligence, customer research, go-to-market planning, and pricing.
+Eight packaged Claude skills for core product marketing work and Progress/Chef brand compliance.
 
 These skills live in `.claude/skills` as packaged `.skill` files and share a common context file at `.agents/product-marketing-context.md`.
 
@@ -14,6 +14,8 @@ These skills live in `.claude/skills` as packaged `.skill` files and share a com
 | `customer-research` | Develops ICP, personas, JTBD, VoC, and win/loss insights |
 | `go-to-market` | Plans launches, campaigns, timelines, enablement, and cross-functional GTM execution |
 | `pricing-packaging` | Recommends pricing models, tiers, value metrics, and pricing-page guidance |
+| `progress-brand-compliance` | Creates, transforms, and audits collateral against Progress corporate brand rules |
+| `chef-brand-compliance` | Creates, transforms, and audits Chef collateral using Chef overrides on the Progress baseline |
 
 ## How It Works
 
@@ -25,6 +27,7 @@ These skills live in `.claude/skills` as packaged `.skill` files and share a com
 ## Repository Layout
 
 - `.claude/skills`: packaged skill files used by Claude
+- `skills`: byte-identical mirrors of the packaged skill files
 - `.claude/.claude-plugin/plugin.json`: Claude plugin metadata
 - `.agents/product-marketing-context.md`: shared PMM context file
 - `CLAUDE.md`: repo-level operating instructions for Claude
@@ -53,9 +56,12 @@ Do not look for unpacked `SKILL.md` folders in this repo. The shipped artifacts 
 3. Run customer research and competitive intelligence.
 4. Build pricing and packaging guidance.
 5. Turn that strategy into a GTM plan.
+6. Create or audit Progress collateral with `progress-brand-compliance`.
+7. Create or audit Chef collateral with `chef-brand-compliance`.
 
 ## Notes
 
-- This repo ships 6 PMM skills.
+- This repo ships 8 packaged skills.
+- Brand-compliance packages include authoritative rule, workflow, and source references; official logo/font binaries remain in the Progress Brand Bank and are not redistributed.
 - Use `.agents/product-marketing-context.md` for shared context.
 - If you add more skills later, update `README.md`, `CLAUDE.md`, and `.claude/.claude-plugin/plugin.json` together.
